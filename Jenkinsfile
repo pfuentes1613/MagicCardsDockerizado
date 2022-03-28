@@ -18,35 +18,35 @@ pipeline {
 
 
 
-        stage('Build') {
+        // stage('Build') {
 
-            steps {
+        //     steps {
 
-                //
+        //         //
 
-            }
+        //     }
 
-        }
+        // }
 
-        stage('Test') {
+        // stage('Test') {
 
-            steps {
+        //     steps {
 
-                //
+        //         //
 
-            }
+        //     }
 
-        }
+        // }
 
-        stage('Deploy') {
+        // stage('Deploy') {
 
-            steps {
+        //     steps {
 
-                //
+        //         //
 
-            }
+        //     }
 
-        }
+        // }
 
     }
 
