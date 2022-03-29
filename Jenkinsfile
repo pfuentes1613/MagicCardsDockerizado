@@ -18,15 +18,27 @@ pipeline {
 
 
 
-        // stage('Build') {
+        stage('Build') {
 
-        //     steps {
+            steps {
 
-        //         //
+                script{
 
-        //     }
+                    sh '''
 
-        // }
+                        whoami
+
+                       docker --version
+
+                       docker build -t MagicardsDockerizadoUbuntu .
+
+                   '''
+
+                }
+
+            }
+
+        }
 
         // stage('Test') {
 
