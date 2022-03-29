@@ -30,7 +30,7 @@ pipeline {
 
                        docker --version
 
-                       docker build -t MagicardsDockerizadoUbuntu .
+                       docker build -t magicardsdockerizadoubuntu .
 
                    '''
 
