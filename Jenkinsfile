@@ -48,6 +48,8 @@ pipeline {
                        docker build -t magicardsdockerizadoubuntu .
                        docker tag magicardsdockerizadoubuntu:latest 435053451664.dkr.ecr.us-east-2.amazonaws.com/pablorepo:latest
 
+                       docker push 435053451664.dkr.ecr.us-east-2.amazonaws.com/pablorepo:latest
+
                    '''
 
                 }
