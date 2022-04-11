@@ -1,3 +1,12 @@
+import groovy.json.JsonSlurperClassic
+
+
+
+def jsonParse(def json) {
+
+    new groovy.json.JsonSlurperClassic().parseText(json)
+
+}
 pipeline {
 
     agent any
@@ -23,7 +32,7 @@ pipeline {
                 script{
 
                     sh '''
-                        aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 435053451664.dkr.ecr.us-east-2.amazonaws.com
+                        aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d9z3m8e7
                    '''
 
                 }
@@ -44,11 +53,10 @@ pipeline {
                         whoami
 
                        docker --version
-
+                       docker rmi magicardsdockerizadoubuntu
                        docker build -t magicardsdockerizadoubuntu .
-                       docker tag magicardsdockerizadoubuntu:latest 435053451664.dkr.ecr.us-east-2.amazonaws.com/pablorepo:latest
-
-                       docker push 435053451664.dkr.ecr.us-east-2.amazonaws.com/pablorepo:latest
+                       docker tag magicardsdockerizadoubuntu:latest public.ecr.aws/d9z3m8e7/pablorepo:latest
+                       docker push public.ecr.aws/d9z3m8e7/pablorepo:latest
 
                    '''
 
@@ -58,25 +66,31 @@ pipeline {
 
         }
 
-        // stage('Test') {
+        stage("Crear cluster en ECS"){ 
 
-        //     steps {
+         steps {
 
-        //         //
+          script {
 
-        //     }
+            sh '''
 
-        // }
+            aws ecs create-cluster --cluster-name fargate-cluster
 
-        // stage('Deploy') {
+            aws ecs register-task-definition --cli-input-json file://fargate-task.json
 
-        //     steps {
+            aws ecs list-task-definitions
 
-        //         //
+            aws ecs create-service --cluster fargate-cluster --service-name fargate-service --task-definition fargate-app:1 --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={subnets=[ subnet-02788912cab17b0ab],securityGroups=[sg-0b04d4c180e08a75f],assignPublicIp=ENABLED}"
 
-        //     }
+            aws ecs list-services --cluster fargate-cluster
 
-        // }
+            '''
+
+          }
+         
+         }
+
+        }
 
     }
 

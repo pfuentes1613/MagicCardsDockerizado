@@ -1,0 +1,45 @@
+{
+
+    "family": "ecs-pab",
+
+    "networkMode": "awsvpc",
+
+    "containerDefinitions": [
+
+        {
+
+            "name": "ecs-magiccards",
+
+            "image": "public.ecr.aws/d9z3m8e7/demo-web-app:latest",
+
+            "portMappings": [
+
+                {
+
+                    "containerPort": 8080,
+
+                    "hostPort": 8080,
+
+                    "protocol": "tcp"
+
+                }
+
+            ],
+
+            "essential": true
+
+        }
+
+    ],
+
+    "requiresCompatibilities": [
+
+        "FARGATE"
+
+    ],
+
+    "cpu": "256",
+
+    "memory": "512"
+
+}
