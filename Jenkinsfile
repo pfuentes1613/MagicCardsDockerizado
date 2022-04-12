@@ -44,7 +44,7 @@ pipeline {
       steps {
           script {
             sh '''
-            aws ecr-public get-login-password --region us-east-2 | docker login --username AWS --password-stdin public.ecr.aws/d9z3m8e7
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d9z3m8e7
             docker tag magiccardsimage:latest public.ecr.aws/d9z3m8e7/pablorepos:latest
             docker push public.ecr.aws/d9z3m8e7/pablorepos:latest
             '''
