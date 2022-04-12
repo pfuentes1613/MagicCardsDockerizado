@@ -12,3 +12,4 @@ Flash card app for learning. Display, add and remove memory cards with questions
 - Clear all cards from local storage
 - siuuuuu
 - siuuuuu x2
+- ya parfavar
