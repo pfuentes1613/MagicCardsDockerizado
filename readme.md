@@ -11,3 +11,4 @@ Flash card app for learning. Display, add and remove memory cards with questions
 - Add new cards to local storage
 - Clear all cards from local storage
 - siuuuuu
+- siuuuuu x2
