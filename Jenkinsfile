@@ -34,7 +34,6 @@ pipeline {
             cd MagicCardsDockerizado
             pwd
             ls
-            docker rmi magiccardsimage
             docker build -t magiccardsimage .
             docker images
             '''
@@ -67,7 +66,9 @@ pipeline {
   }
 }
  post {
-     always {          
+     always {     
+          sh "docker rmi magiccardsimage"
+
           sh "echo 'Esto siempre se reproduce'"
       }
      success {
