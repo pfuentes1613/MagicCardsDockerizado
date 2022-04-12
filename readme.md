@@ -13,3 +13,4 @@ Flash card app for learning. Display, add and remove memory cards with questions
 - siuuuuu
 - siuuuuu x2
 - ya parfavar
+- el 7 estoy seguro que si jala
