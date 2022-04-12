@@ -10,7 +10,7 @@
 
             "name": "ecs-magiccards",
 
-            "image": "public.ecr.aws/d9z3m8e7/demo-web-app:latest",
+            "image": "public.ecr.aws/d9z3m8e7/pablorepos:latest",
 
             "portMappings": [
 
