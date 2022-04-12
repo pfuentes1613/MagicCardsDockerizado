@@ -15,3 +15,4 @@ Flash card app for learning. Display, add and remove memory cards with questions
 - ya parfavar
 - el 7 estoy seguro que si jala
 - el 7 no valio madre
+- el 10 fue el decisivo
