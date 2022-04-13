@@ -10,7 +10,7 @@ Flash card app for learning. Display, add and remove memory cards with questions
 - View prev and next cards
 - Add new cards to local storage
 - Clear all cards from local storage
-- siuuuuu
+- siuuuuu?
 - siuuuuu x2
 - ya parfavar
 - el 7 estoy seguro que si jala
